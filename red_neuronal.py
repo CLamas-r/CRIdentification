@@ -54,6 +54,7 @@ ax=f.add_subplot(rows,cols,1)
 sns.lineplot(data=errores[['mean_absolute_percentage_error', 'val_mean_absolute_percentage_error']].iloc[3:-1])
 ax = f.add_subplot(rows, cols, 2)
 sns.lineplot(data=errores[["loss", "val_loss"]].iloc[3:-1])
+#f.savefig('Errores')
 
 prediction=model.predict(test.values)
 resultados=pd.DataFrame(prediction, columns=['PrimCR', 'EnePCR'])
