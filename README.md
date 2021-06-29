@@ -1,1 +1,2 @@
 # CRIdentification
+Este proyecto versa sobre el análisis multivariante de rayos cósmicos simulados y desarrollo de un algoritmo para la identificación de rayos cósmicos primarios mediante un detector tipo Trasgo. En partícular, se espera que los resultados obtenidos sean aplicables a un detector de tipo similar al TRAGALDABAS, desarrollado por el Laboratorio Carmen Fernández en la Universidad de Santiago de Compostela.
