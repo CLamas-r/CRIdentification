@@ -18,7 +18,7 @@ plt.close()
 datos=pd.read_excel('datos_pandas.xlsx')
 #print(datos)
 
-#datos=datos.drop(['NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMuT1', 'NCMuT2', 'NCMuT3', 'NCMuA1', 'NCMuA2', 'NCMuA3'], axis=1)
+datos=datos.drop(['NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMuT1', 'NCMuT2', 'NCMuT3', 'NCMuA1', 'NCMuA2', 'NCMuA3'], axis=1)
 #print(datos)
 
 # plt.figure(figsize=(15, 15))
@@ -45,7 +45,7 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mean_absolu
 model.summary()
 
 validation_split=0.2
-history=model.fit(X,Y,workers=4,epochs=100,verbose=2,validation_split=validation_split)
+history=model.fit(X,Y,workers=4,epochs=75,verbose=2,validation_split=validation_split)
 
 errores=pd.DataFrame(history.history)
 f=plt.figure(figsize=(20,10))
