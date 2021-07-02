@@ -45,7 +45,7 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mean_absolu
 model.summary()
 
 validation_split=0.2
-history=model.fit(X,Y,workers=4,epochs=75,verbose=2,validation_split=validation_split)
+history=model.fit(X,Y,workers=4,epochs=100,verbose=2,validation_split=validation_split)
 
 errores=pd.DataFrame(history.history)
 f=plt.figure(figsize=(20,10))
