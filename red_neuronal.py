@@ -18,8 +18,8 @@ plt.close()
 datos=pd.read_excel('datos_pandas.xlsx')
 #print(datos)
 
-datos=datos.drop(['NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMuT1', 'NCMuT2', 'NCMuT3', 'NCMuA1', 'NCMuA2', 'NCMuA3'], axis=1)
-#print(datos)
+# datos=datos.drop(['NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMuT1', 'NCMuT2', 'NCMuT3', 'NCMuA1', 'NCMuA2', 'NCMuA3'], axis=1)
+# #print(datos)
 
 # plt.figure(figsize=(15, 15))
 # sns.heatmap(datos.corr(), cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
@@ -40,7 +40,7 @@ assert X.shape[0]==Y.shape[0]
 input_dim=X.shape[1]
 output_dim=Y.shape[1]
 
-model=keras.models.Sequential([keras.layers.Dense(100,activation=tf.nn.relu,input_shape=(input_dim,)),keras.layers.Dense(100,activation=tf.nn.relu), keras.layers.Dense(output_dim)])
+model=keras.models.Sequential([keras.layers.Dense(50,activation=tf.nn.relu,input_shape=(input_dim,)),keras.layers.Dense(50,activation=tf.nn.relu), keras.layers.Dense(output_dim)])
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mean_absolute_percentage_error'])
 model.summary()
 
