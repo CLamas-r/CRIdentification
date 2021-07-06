@@ -18,7 +18,7 @@ plt.close()
 datos=pd.read_excel('datos_pandas.xlsx')
 #print(datos)
 
-datos=datos.drop(['Ntele', 'NtMu'], axis=1)
+datos=datos.drop(['Ntele', 'NtMu', 'NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMxR1', 'NCMxR2', 'NCMxR3', 'NCMxR4'], axis=1)
 # #print(datos)
 
 # plt.figure(figsize=(15, 15))
