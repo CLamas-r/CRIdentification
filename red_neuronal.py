@@ -21,8 +21,8 @@ datos=pd.read_excel('datos_pandas.xlsx')
 datos=datos.drop(['Ntele', 'NtMu'], axis=1)
 # #print(datos)
 
-plt.figure(figsize=(15, 15))
-sns.heatmap(datos.corr(), cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
+# plt.figure(figsize=(15, 15))
+# sns.heatmap(datos.corr(), cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
 
 datos_barajados=datos.sample(frac=1).reset_index(drop=True) #Reordenamos las filas para que los datos de test abarquen todo el rango
 train=datos_barajados[3:]
@@ -40,12 +40,12 @@ assert X.shape[0]==Y.shape[0]
 input_dim=X.shape[1]
 output_dim=Y.shape[1]
 
-model=keras.models.Sequential([keras.layers.Dense(100,activation=tf.nn.relu,input_shape=(input_dim,)),keras.layers.Dense(100,activation=tf.nn.relu), keras.layers.Dense(output_dim)])
+model=keras.models.Sequential([keras.layers.Dense(50,activation=tf.nn.relu,input_shape=(input_dim,)),keras.layers.Dense(50,activation=tf.nn.relu), keras.layers.Dense(output_dim)])
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mean_absolute_percentage_error'])
 model.summary()
 
 validation_split=0.2
-history=model.fit(X,Y,workers=4,epochs=75,verbose=2,validation_split=validation_split)
+history=model.fit(X,Y,workers=4,epochs=125,verbose=2,validation_split=validation_split)
 
 errores=pd.DataFrame(history.history)
 f=plt.figure(figsize=(20,10))
