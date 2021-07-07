@@ -17,7 +17,7 @@ from tensorflow import keras
 plt.close()
 datos=pd.read_excel('datos_pandas.xlsx')
 datos=datos.fillna(0)
-print(datos)
+#print(datos)
 
 datos=datos.drop(['Ntele', 'NtMu'], axis=1)
 # #print(datos)
