@@ -19,12 +19,12 @@ datos=pd.read_excel('datos_pandas.xlsx')
 datos=datos.fillna(0)
 #print(datos)
 
-datos=datos.drop(['Ntele', 'NtMu'], axis=1)
+datos=datos.drop(['Ntele', 'NtMu', 'NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMxR1', 'NCMxR2', 'NCMxR3', 'NCMxR4'], axis=1)
 # #print(datos)
 #'NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMxR1', 'NCMxR2', 'NCMxR3', 'NCMxR4'
 
-plt.figure(figsize=(15, 15))
-sns.heatmap(datos.corr(), cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
+# plt.figure(figsize=(15, 15))
+# sns.heatmap(datos.corr(), cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
 
 datos_barajados=datos.sample(frac=1).reset_index(drop=True) #Reordenamos las filas para que los datos de test abarquen todo el rango
 train=datos_barajados[3:]
