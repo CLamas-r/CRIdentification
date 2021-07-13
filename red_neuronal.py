@@ -15,11 +15,11 @@ from tensorflow import keras
 #print(tf.__version__)
 
 plt.close()
-datos=pd.read_excel('datos_pandas.xlsx')
+datos=pd.read_excel('datos_protones.xlsx')
 datos=datos.fillna(0)
 #print(datos)
 
-datos=datos.drop(['Ntele', 'NtMu'], axis=1)
+#datos=datos.drop(['Ntele', 'NtMu', 'NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMxR1', 'NCMxR2', 'NCMxR3', 'NCMxR4'], axis=1)
 # #print(datos)
 #'NCElR1', 'NCElR2', 'NCElR3', 'NCElR4', 'NCMuR1', 'NCMuR2', 'NCMuR3', 'NCMuR4', 'NCMxR1', 'NCMxR2', 'NCMxR3', 'NCMxR4'
 
@@ -27,17 +27,17 @@ datos=datos.drop(['Ntele', 'NtMu'], axis=1)
 # #print(corr)
 # plt.figure(figsize=(15, 15))
 # sns.heatmap(corr, cmap='RdBu', vmax=1, vmin=-1) #Representamos la matriz de correlación
-# plt.title('Matriz de correlación'); plt.savefig('matriz_correlacion')
+# plt.title('Matriz de correlación')
 # #np.savetxt('Matriz de correlación', corr)
 
 # corr_E=pd.DataFrame(corr,columns=['EnePCR'])
 # corr_PrimCR=pd.DataFrame(corr,columns=['PrimCR'])
 
 # plt.figure()
-# plt.plot(corr_PrimCR); plt.xticks(rotation=90); plt.hlines(0,'PrimCR', 'NCEl/NCMx', colors='black'); plt.title('Correlación tipo de núcleo'); plt.savefig('corr_PrimCR')
+# plt.plot(corr_PrimCR); plt.xticks(rotation=90); plt.hlines(0,'PrimCR', 'NCEl/NCMx', colors='black'); plt.title('Correlación tipo de núcleo')
 
 # plt.figure()
-# plt.plot(corr_E); plt.xticks(rotation=90); plt.hlines(0,'PrimCR', 'NCEl/NCMx', colors='black'); plt.title('Correlación E PCR'); plt.savefig('corr_E')
+# plt.plot(corr_E); plt.xticks(rotation=90); plt.hlines(0,'PrimCR', 'NCEl/NCMx', colors='black'); plt.title('Correlación E PCR')
 
 
 datos_barajados=datos.sample(frac=1).reset_index(drop=True) #Reordenamos las filas para que los datos de test abarquen todo el rango
