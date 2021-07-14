@@ -15,7 +15,7 @@ from tensorflow import keras
 #print(tf.__version__)
 
 plt.close()
-datos=pd.read_excel('datos_pandas.xlsx')
+datos=pd.read_excel('datos_pandas2.xlsx')
 datos=datos.fillna(0)
 #print(datos)
 
