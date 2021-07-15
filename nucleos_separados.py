@@ -15,7 +15,7 @@ from tensorflow import keras
 #print(tf.__version__)
 
 plt.close()
-datos=pd.read_excel('datos_pandas2.xlsx')
+datos=pd.read_excel('datos_protones.xlsx')
 datos=datos.fillna(0)
 #print(datos)
 
@@ -43,13 +43,13 @@ datos=datos.fillna(0)
 datos_barajados=datos.sample(frac=1).reset_index(drop=True) #Reordenamos las filas para que los datos de test abarquen todo el rango
 train=datos_barajados[3:]
 test=datos_barajados[0:3]
-resultados_test=pd.DataFrame(test,columns=['PrimCR', 'EnePCR'])
-test=test.drop(['PrimCR', 'EnePCR'],axis=1)
+resultados_test=pd.DataFrame(test,columns=['EnePCR'])
+test=test.drop(['EnePCR'],axis=1)
 #print(train)
 #print(test)
 
-X=train.drop(['PrimCR', 'EnePCR'],axis=1).values
-Y=pd.DataFrame(train,columns=['PrimCR', 'EnePCR']).values
+X=train.drop(['EnePCR'],axis=1).values
+Y=pd.DataFrame(train,columns=['EnePCR']).values
 #print (Y)
 
 assert X.shape[0]==Y.shape[0]
@@ -73,7 +73,7 @@ sns.lineplot(data=errores[["loss", "val_loss"]].iloc[3:-1])
 #f.savefig('Errores')
 
 prediction=model.predict(test.values)
-resultados=pd.DataFrame(prediction, columns=['PrimCR', 'EnePCR'])
+resultados=pd.DataFrame(prediction, columns=['EnePCR'])
 
 print(resultados_test)
 resultados_test.head()
